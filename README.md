@@ -1,6 +1,6 @@
 # Kairos
 
-![Home page](Screenshot.png)
+![Home page](Front-end_Kairos/Screenshot.png)
 
 **Kairos** is the website of a bar created as a personal training project. It is built with **React**, **Vite**, **Bootstrap**, and **custom CSS**. The site allows users to navigate between different pages and view dynamic content, such as menus and promotions.
 
