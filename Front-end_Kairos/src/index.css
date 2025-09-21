@@ -1,0 +1,402 @@
+/* =================================== */
+/*           STILI GLOBALI             */
+/* =================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  padding-top: 10rem;
+  background: url("/Kairos_foto/Kairos_sfondo.jpg") no-repeat center center
+    fixed;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+/* Effetto glass generale */
+.box-custom-satin-glass {
+  background-color: #ffffff40;
+  backdrop-filter: blur(0.625rem);
+  -webkit-backdrop-filter: blur(0.625rem);
+  border: 0.0625rem solid #ffffff80;
+  box-shadow: 0 0.25rem 0.75rem #0000000d;
+}
+
+/* =================================== */
+/*             NAVBAR                  */
+/* =================================== */
+.navbar {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  gap: 1.25rem;
+  padding: 0.5rem 1.5rem;
+  width: 99%;
+  border-radius: 3.125rem;
+  transition: height 0.3s ease;
+}
+
+.logo {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  height: 4em;
+  border-radius: 50%;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo img {
+  max-width: 3.75rem;
+  border-radius: 50%;
+  box-shadow: 0 0.0625rem 0.25rem #0000001f;
+}
+
+/* Navbar in tema scuro */
+body.dark-theme .navbar {
+  background-color: #00000066;
+  border: 0.0625rem solid #ffffff4d;
+  color: #f1f1f1;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler:hover {
+  box-shadow: 0 0 0.5rem #ffffff88;
+}
+
+/* =================================== */
+/*             FOOTER                  */
+/* =================================== */
+.footer-style {
+  border-radius: 0.9375rem;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  flex-direction: row;
+}
+
+.social-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-list li i,
+.social-list li img {
+  font-size: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: white;
+}
+
+.footer-style > .col-md-4 {
+  width: 4rem;
+  height: 5rem;
+}
+
+/* =================================== */
+/*          CONTENUTO PRINCIPALE       */
+/* =================================== */
+.contenitore {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  gap: 0.3125rem;
+  padding: 1.25rem;
+}
+
+.box {
+  border-radius: 0.9375rem;
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.25rem;
+}
+
+.box img {
+  height: 90%;
+  width: auto;
+  object-fit: cover;
+}
+
+.color-custom-dark {
+  color: #131d29;
+}
+
+.bg-custom-dark-background {
+  background-color: #131d29;
+}
+
+/* Box Facebook */
+.box-facebook {
+  display: flex;
+  justify-content: row;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 0.9375rem;
+}
+
+.if-fb {
+  width: 31.25rem;
+  height: 35.5625rem;
+  border: none;
+  overflow: hidden;
+  border-radius: 0.9375rem;
+}
+
+.box-text {
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* =================================== */
+/*             CAFFETTERIA             */
+/* =================================== */
+
+/* Griglia principale per la caffetteria */
+.custom-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  column-gap: 1rem;
+  min-width: 0;
+  align-items: start;
+}
+
+/* Sidebar della caffetteria */
+.custom-sidebar {
+  position: fixed; /* Sidebar fissa */
+  left: 1rem; /* Distanza dal bordo sinistro */
+  width: 150px; /* Larghezza fissa */
+  height: 81vh;
+  overflow-y: auto; /* Scroll interno se serve */
+
+  border-radius: 1rem;
+  padding: 1rem;
+  z-index: 100;
+}
+
+/* Contenuto principale della caffetteria */
+.custom-main {
+  margin-left: 170px; /* almeno la larghezza della sidebar + left */
+  width: calc(
+    100vw - 200px
+  ); /* 200px = larghezza sidebar (150px) + left (2rem ≈ 32px x 2) + padding */
+  min-width: 0;
+
+  border-radius: 1rem;
+  padding: 1rem;
+  min-height: calc(100vh - 120px);
+  box-sizing: border-box;
+}
+.aggiunte {
+  padding: 0.5rem 1rem 0.5rem 0;
+}
+
+.prezzo {
+  font-weight: 600;
+}
+
+.lista-side li {
+  position: relative;
+  padding: 0.3rem;
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s;
+}
+
+.bt-custom {
+  border: none;
+  background: transparent;
+  width: 6rem;
+  text-align: start;
+  border-radius: 0.5rem;
+}
+
+.bt-custom:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.bt-custom:hover {
+  background-color: #ffffff50;
+}
+
+/* =================================== */
+/*             TEMA SCURO              */
+/* =================================== */
+.dark-theme .Theme {
+  color: #f1f1f1 !important;
+}
+
+body.light-theme {
+  background-color: #f9f9f9;
+  color: #333333;
+}
+
+body.dark-theme .box,
+body.dark-theme .box-2,
+body.dark-theme .footer-style,
+body.dark-theme .sidebar,
+body.dark-theme .col-fixed,
+body.dark-theme .main-content-menu,
+body.dark-theme .box-if,
+body.dark-theme .box-form,
+body.dark-theme .custom-main,
+body.dark-theme .custom-sidebar {
+  background-color: #00000066;
+  border: 0.0625rem solid #ffffff4d;
+}
+
+body.dark-theme .nav-list li a,
+body.dark-theme .box-2 h2,
+body.dark-theme .box-2 p {
+  color: #f1f1f1;
+}
+
+body.dark-theme::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #00000066;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* =================================== */
+/*             TRANSIZIONI             */
+/* =================================== */
+body,
+.navbar,
+.nav-list li a,
+.box,
+h1,
+h2,
+p,
+button,
+.box-if,
+.col-fixed,
+.main-content-menu,
+.sidebar,
+.footer-style,
+.box-form,
+.custom-main,
+.custom-sidebar {
+  transition: all 0.4s ease-in-out;
+}
+
+/* =================================== */
+/*           MEDIA QUERY               */
+/* =================================== */
+@media (max-width: 47.9375rem) {
+  .box-1 {
+    min-width: 9.375rem;
+  }
+}
+
+@media (max-width: 62rem) {
+  .box-text {
+    display: none;
+  }
+  .box-facebook {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 48rem) {
+  .box-1 {
+    min-width: 9.375rem;
+  }
+}
+
+/* =================================== */
+/*           SCROLL & ELEMENTI ID      */
+/* =================================== */
+#Caffè,
+#Orzo,
+#Ginseng,
+#Spritzeria,
+#Analcolici,
+#Drink,
+#Dolci,
+#Vasetti,
+#Gelati {
+  scroll-margin-top: 12.5rem;
+}
+
+/* =================================== */
+/*           DROPDOWN LOGIN            */
+/* =================================== */
+.login-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 2000;
+  border-radius: 0.625rem;
+  padding: 1rem;
+  min-width: 15rem;
+}
+
+/* =================================== */
+/*       LOGIN DROPDOWN TEMA SCURO     */
+/* =================================== */
+body.dark-theme .login-dropdown {
+  background-color: #000000cc;
+  border: 0.0625rem solid #ffffff4d;
+  color: #f1f1f1;
+}
+
+body.dark-theme .login-dropdown input,
+body.dark-theme .login-dropdown button {
+  background-color: #1a1a1a;
+  color: #f1f1f1;
+  border: 0.0625rem solid #ffffff4d;
+}
+/* Form chiaro */
+.card-form.light-theme {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.card-form.light-theme input {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ced4da;
+}
+
+/* Form scuro */
+.card-form.dark-theme {
+  background-color: #1a1a1a;
+  color: #f1f1f1;
+}
+
+.card-form.dark-theme input {
+  background-color: #00000066;
+  color: #f1f1f1;
+  border: 0.0625rem solid #ffffff4d;
+}
