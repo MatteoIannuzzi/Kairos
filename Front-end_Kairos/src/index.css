@@ -1,76 +1,92 @@
 /* =================================== */
 /*           STILI GLOBALI             */
 /* =================================== */
+
+/* Scroll fluido per tutta la pagina / Smooth scrolling for the entire page */
 html {
   scroll-behavior: smooth;
 }
 
+/* Stili base del body / Base body styles */
 body {
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  padding-top: 10rem;
+  font-family: "Poppins", sans-serif; /* Font principale / Main font */
+  font-size: 1rem; /* Dimensione base / Base font size */
+  padding-top: 10rem; /* Spazio per navbar fissa / Space for fixed navbar */
   background: url("/Kairos_foto/Kairos_sfondo.jpg") no-repeat center center
-    fixed;
-  background-size: cover;
-  box-sizing: border-box;
+    fixed; /* Sfondo fisso / Fixed background */
+  background-size: cover; /* Copre tutta l’area / Cover full area */
+  box-sizing: border-box; /* Include padding e bordi nel calcolo larghezza / Include padding and borders in width calculation */
 }
 
-/* Effetto glass generale */
+/* Effetto glass generale / General glass effect */
 .box-custom-satin-glass {
-  background-color: #ffffff40;
-  backdrop-filter: blur(0.625rem);
-  -webkit-backdrop-filter: blur(0.625rem);
-  border: 0.0625rem solid #ffffff80;
-  box-shadow: 0 0.25rem 0.75rem #0000000d;
+  background-color: #ffffff40; /* Sfondo semitrasparente / Semi-transparent background */
+  backdrop-filter: blur(
+    0.625rem
+  ); /* Sfocatura dello sfondo / Blur the background */
+  -webkit-backdrop-filter: blur(
+    0.625rem
+  ); /* Compatibilità Safari / Safari compatibility */
+  border: 0.0625rem solid #ffffff80; /* Bordo semitrasparente / Semi-transparent border */
+  box-shadow: 0 0.25rem 0.75rem #0000000d; /* Ombra leggera / Light shadow */
 }
 
 /* =================================== */
 /*             NAVBAR                  */
 /* =================================== */
+
+/* Navbar principale / Main navbar */
 .navbar {
-  position: fixed;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  gap: 1.25rem;
-  padding: 0.5rem 1.5rem;
-  width: 99%;
-  border-radius: 3.125rem;
-  transition: height 0.3s ease;
+  position: fixed; /* Navbar fissa / Fixed navbar */
+  top: 1rem; /* Distanza dall’alto / Distance from top */
+  left: 50%; /* Centra orizzontalmente / Center horizontally */
+  transform: translateX(
+    -50%
+  ); /* Correzione centratura / Centering adjustment */
+  z-index: 1000; /* Sopra altri elementi / Above other elements */
+  gap: 1.25rem; /* Spazio tra elementi / Gap between items */
+  padding: 0.5rem 1.5rem; /* Padding interno / Inner padding */
+  width: 99%; /* Larghezza navbar / Navbar width */
+  border-radius: 3.125rem; /* Bordo arrotondato / Rounded border */
+  transition: height 0.3s ease; /* Transizione altezza / Height transition */
 }
 
+/* Logo / Logo */
 .logo {
   background: none;
   border: none;
   padding: 0;
-  cursor: pointer;
+  cursor: pointer; /* Puntatore al passaggio / Pointer on hover */
   height: 4em;
-  border-radius: 50%;
+  border-radius: 50%; /* Forma rotonda / Round shape */
 }
 
+/* Effetto hover logo / Logo hover effect */
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
 
+/* Immagine logo / Logo image */
 .logo img {
   max-width: 3.75rem;
   border-radius: 50%;
-  box-shadow: 0 0.0625rem 0.25rem #0000001f;
+  box-shadow: 0 0.0625rem 0.25rem #0000001f; /* Piccola ombra / Small shadow */
 }
 
-/* Navbar in tema scuro */
+/* Navbar in tema scuro / Navbar in dark theme */
 body.dark-theme .navbar {
-  background-color: #00000066;
-  border: 0.0625rem solid #ffffff4d;
-  color: #f1f1f1;
+  background-color: #00000066; /* Sfondo semi-trasparente nero / Semi-transparent black background */
+  border: 0.0625rem solid #ffffff4d; /* Bordo chiaro / Light border */
+  color: #f1f1f1; /* Testo chiaro / Light text */
 }
 
+/* Bottone navbar focus / Navbar button focus */
 .navbar-toggler:focus {
   outline: none;
   box-shadow: none;
 }
 
+/* Bottone navbar hover / Navbar button hover */
 .navbar-toggler:hover {
   box-shadow: 0 0 0.5rem #ffffff88;
 }
@@ -78,26 +94,30 @@ body.dark-theme .navbar {
 /* =================================== */
 /*             FOOTER                  */
 /* =================================== */
+
+/* Stile footer principale / Main footer style */
 .footer-style {
   border-radius: 0.9375rem;
   height: 10rem;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Centra contenuti orizzontalmente / Center content horizontally */
   padding: 1rem;
-  flex-direction: row;
+  flex-direction: row; /* Layout orizzontale / Horizontal layout */
 }
 
+/* Lista icone social / Social icons list */
 .social-list {
-  list-style: none;
+  list-style: none; /* Rimuove pallini / Remove bullets */
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  flex-direction: row; /* Disposizione orizzontale / Horizontal layout */
+  gap: 1rem; /* Spazio tra icone / Gap between icons */
   padding: 0;
   margin: 0;
   justify-content: center;
   align-items: center;
 }
 
+/* Stile icone social / Social icons style */
 .social-list li i,
 .social-list li img {
   font-size: 2.5rem;
@@ -106,6 +126,7 @@ body.dark-theme .navbar {
   color: white;
 }
 
+/* Colonna footer / Footer column */
 .footer-style > .col-md-4 {
   width: 4rem;
   height: 5rem;
@@ -114,14 +135,17 @@ body.dark-theme .navbar {
 /* =================================== */
 /*          CONTENUTO PRINCIPALE       */
 /* =================================== */
+
+/* Contenitore principale / Main content container */
 .contenitore {
   width: 100vw;
-  display: grid;
-  grid-template-columns: 2fr 10fr;
-  gap: 0.3125rem;
+  display: grid; /* Layout a griglia / Grid layout */
+  grid-template-columns: 2fr 10fr; /* Dimensione colonne / Column sizes */
+  gap: 0.3125rem; /* Spazio tra box / Gap between boxes */
   padding: 1.25rem;
 }
 
+/* Box generici / Generic boxes */
 .box {
   border-radius: 0.9375rem;
   height: 25rem;
@@ -133,21 +157,28 @@ body.dark-theme .navbar {
   margin-bottom: 1.25rem;
 }
 
+/* Immagini all’interno dei box / Images inside boxes */
 .box img {
   height: 90%;
   width: auto;
-  object-fit: cover;
+  object-fit: cover; /* Adatta proporzioni / Maintain aspect ratio */
 }
 
+/* Colore testo scuro personalizzato / Custom dark text color */
 .color-custom-dark {
   color: #131d29;
 }
 
+/* Sfondo scuro personalizzato / Custom dark background */
 .bg-custom-dark-background {
   background-color: #131d29;
 }
 
-/* Box Facebook */
+/* =================================== */
+/*          BOX FACEBOOK               */
+/* =================================== */
+
+/* Box contenitore Facebook / Facebook container box */
 .box-facebook {
   display: flex;
   justify-content: row;
@@ -156,6 +187,7 @@ body.dark-theme .navbar {
   border-radius: 0.9375rem;
 }
 
+/* iframe Facebook / Facebook iframe */
 .if-fb {
   width: 31.25rem;
   height: 35.5625rem;
@@ -164,6 +196,7 @@ body.dark-theme .navbar {
   border-radius: 0.9375rem;
 }
 
+/* Box contenuto testuale / Text content box */
 .box-text {
   padding: 5rem;
   display: flex;
@@ -176,57 +209,60 @@ body.dark-theme .navbar {
 /*             CAFFETTERIA             */
 /* =================================== */
 
-/* Griglia principale per la caffetteria */
+/* Griglia principale per la caffetteria / Main grid layout for Caffetteria */
 .custom-grid {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  column-gap: 1rem;
+  display: grid; /* Layout a griglia / Grid layout */
+  grid-template-columns: 120px 1fr; /* Colonna sidebar fissa e colonna principale / Fixed sidebar column and main column */
+  column-gap: 1rem; /* Spazio tra le colonne / Gap between columns */
   min-width: 0;
-  align-items: start;
+  align-items: start; /* Allinea gli elementi all’inizio / Align items at the top */
 }
 
-/* Sidebar della caffetteria */
+/* Sidebar della caffetteria / Sidebar of Caffetteria */
 .custom-sidebar {
-  position: fixed; /* Sidebar fissa */
-  left: 1rem; /* Distanza dal bordo sinistro */
-  width: 150px; /* Larghezza fissa */
-  height: 81vh;
-  overflow-y: auto; /* Scroll interno se serve */
-
+  position: fixed; /* Sidebar fissa / Fixed sidebar */
+  left: 1rem; /* Distanza dal bordo sinistro / Distance from left edge */
+  width: 150px; /* Larghezza fissa / Fixed width */
+  height: 81vh; /* Altezza relativa alla finestra / Height relative to viewport */
+  overflow-y: auto; /* Scroll verticale se necessario / Vertical scroll if needed */
   border-radius: 1rem;
   padding: 1rem;
-  z-index: 100;
+  z-index: 100; /* Sopra altri elementi / Above other elements */
 }
 
-/* Contenuto principale della caffetteria */
+/* Contenuto principale della caffetteria / Main content of Caffetteria */
 .custom-main {
-  margin-left: 170px; /* almeno la larghezza della sidebar + left */
+  margin-left: 170px; /* Spazio per sidebar + margine / Space for sidebar + left margin */
   width: calc(
     100vw - 200px
-  ); /* 200px = larghezza sidebar (150px) + left (2rem ≈ 32px x 2) + padding */
+  ); /* Larghezza contenitore principale / Main container width */
   min-width: 0;
-
   border-radius: 1rem;
   padding: 1rem;
-  min-height: calc(100vh - 120px);
-  box-sizing: border-box;
+  min-height: calc(100vh - 120px); /* Altezza minima / Minimum height */
+  box-sizing: border-box; /* Include padding e bordo / Include padding and border */
 }
+
+/* Padding aggiuntivo per elementi / Extra padding for elements */
 .aggiunte {
   padding: 0.5rem 1rem 0.5rem 0;
 }
 
+/* Stile prezzo / Price style */
 .prezzo {
   font-weight: 600;
 }
 
+/* Lista sidebar / Sidebar list items */
 .lista-side li {
   position: relative;
   padding: 0.3rem;
-  cursor: pointer;
+  cursor: pointer; /* Puntatore al passaggio / Pointer on hover */
   color: white;
-  transition: color 0.3s;
+  transition: color 0.3s; /* Transizione colore / Color transition */
 }
 
+/* Bottone personalizzato / Custom button */
 .bt-custom {
   border: none;
   background: transparent;
@@ -235,27 +271,33 @@ body.dark-theme .navbar {
   border-radius: 0.5rem;
 }
 
+/* Focus bottone / Button focus */
 .bt-custom:focus {
   outline: none;
   box-shadow: none;
 }
 
+/* Hover bottone / Button hover */
 .bt-custom:hover {
-  background-color: #ffffff50;
+  background-color: #ffffff50; /* Sfondo semitrasparente / Semi-transparent background */
 }
 
 /* =================================== */
 /*             TEMA SCURO              */
 /* =================================== */
+
+/* Colore testo per elementi Theme / Text color for Theme elements */
 .dark-theme .Theme {
   color: #f1f1f1 !important;
 }
 
+/* Corpo chiaro / Light theme body */
 body.light-theme {
   background-color: #f9f9f9;
   color: #333333;
 }
 
+/* Box, sidebar e contenuti principali in tema scuro / Boxes, sidebar, main content in dark theme */
 body.dark-theme .box,
 body.dark-theme .box-2,
 body.dark-theme .footer-style,
@@ -266,16 +308,18 @@ body.dark-theme .box-if,
 body.dark-theme .box-form,
 body.dark-theme .custom-main,
 body.dark-theme .custom-sidebar {
-  background-color: #00000066;
-  border: 0.0625rem solid #ffffff4d;
+  background-color: #00000066; /* Sfondo semitrasparente / Semi-transparent background */
+  border: 0.0625rem solid #ffffff4d; /* Bordo chiaro / Light border */
 }
 
+/* Colore testo per link e contenuti / Text color for links and content */
 body.dark-theme .nav-list li a,
 body.dark-theme .box-2 h2,
 body.dark-theme .box-2 p {
   color: #f1f1f1;
 }
 
+/* Overlay scuro per tutto il corpo / Dark overlay for whole body */
 body.dark-theme::before {
   content: "";
   position: fixed;
@@ -285,12 +329,14 @@ body.dark-theme::before {
   height: 100vh;
   background: #00000066;
   z-index: -1;
-  pointer-events: none;
+  pointer-events: none; /* Non interferisce con click / Doesn't block clicks */
 }
 
 /* =================================== */
 /*             TRANSIZIONI             */
 /* =================================== */
+
+/* Transizioni generali per animazioni fluide / General transitions for smooth animations */
 body,
 .navbar,
 .nav-list li a,
@@ -313,21 +359,25 @@ button,
 /* =================================== */
 /*           MEDIA QUERY               */
 /* =================================== */
+
+/* Box-1 piccolo su schermi stretti / Box-1 smaller on small screens */
 @media (max-width: 47.9375rem) {
   .box-1 {
     min-width: 9.375rem;
   }
 }
 
+/* Box Facebook responsive / Responsive Facebook box */
 @media (max-width: 62rem) {
   .box-text {
-    display: none;
+    display: none; /* Nasconde testo su schermi medi / Hide text on medium screens */
   }
   .box-facebook {
     max-width: 500px;
   }
 }
 
+/* Box-1 minima larghezza per schermi medi / Box-1 min width on medium screens */
 @media (min-width: 48rem) {
   .box-1 {
     min-width: 9.375rem;
@@ -337,6 +387,8 @@ button,
 /* =================================== */
 /*           SCROLL & ELEMENTI ID      */
 /* =================================== */
+
+/* Margine per scroll verso ID / Scroll margin for IDs */
 #Caffè,
 #Orzo,
 #Ginseng,
@@ -346,12 +398,14 @@ button,
 #Dolci,
 #Vasetti,
 #Gelati {
-  scroll-margin-top: 12.5rem;
+  scroll-margin-top: 12.5rem; /* Evita che la navbar fissi il contenuto / Avoid fixed navbar covering content */
 }
 
 /* =================================== */
 /*           DROPDOWN LOGIN            */
 /* =================================== */
+
+/* Dropdown login / Login dropdown */
 .login-dropdown {
   position: absolute;
   top: 100%;
@@ -365,19 +419,23 @@ button,
 /* =================================== */
 /*       LOGIN DROPDOWN TEMA SCURO     */
 /* =================================== */
+
+/* Dropdown login in dark theme / Login dropdown in dark theme */
 body.dark-theme .login-dropdown {
-  background-color: #000000cc;
-  border: 0.0625rem solid #ffffff4d;
-  color: #f1f1f1;
+  background-color: #000000cc; /* Sfondo scuro / Dark background */
+  border: 0.0625rem solid #ffffff4d; /* Bordo chiaro / Light border */
+  color: #f1f1f1; /* Testo chiaro / Light text */
 }
 
+/* Input e button in dark theme / Inputs and buttons in dark theme */
 body.dark-theme .login-dropdown input,
 body.dark-theme .login-dropdown button {
   background-color: #1a1a1a;
   color: #f1f1f1;
   border: 0.0625rem solid #ffffff4d;
 }
-/* Form chiaro */
+
+/* Form chiaro / Light theme form */
 .card-form.light-theme {
   background-color: #ffffff;
   color: #000000;
@@ -389,7 +447,7 @@ body.dark-theme .login-dropdown button {
   border: 1px solid #ced4da;
 }
 
-/* Form scuro */
+/* Form scuro / Dark theme form */
 .card-form.dark-theme {
   background-color: #1a1a1a;
   color: #f1f1f1;

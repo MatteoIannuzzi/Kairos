@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"; // Importa React / Import React
 
-// Array di prodotti
+// Array di prodotti / Array of products
 const prodottiDolci = [
   {
     id: "Dolci",
@@ -31,7 +31,6 @@ const prodottiDolci = [
     descrizione:
       "...Nutella, Cioc. Bianco, Lotus, Pistacchio, Albicocca, Frutti di Bosco, Crema ",
   },
-
   {
     id: "Vasetti",
     categoria: "Vasetti",
@@ -92,12 +91,15 @@ const prodottiDolci = [
   },
 ];
 
+// Componente Dolci / Dolci component
 function Dolci() {
+  // Array categorie / Categories array
   const categorie = ["Dolci", "Vasetti", "Gelati"];
 
   return (
+    // Griglia principale / Main grid
     <div className="m-2 custom-grid">
-      {/* Sidebar */}
+      {/* Sidebar con categorie / Sidebar with categories */}
       <div className="custom-sidebar box-custom-satin-glass">
         <ul className="list-unstyled lista-side">
           {categorie.map((cat) => (
@@ -108,7 +110,7 @@ function Dolci() {
                   type="button"
                   style={{ width: "100%" }}
                 >
-                  {cat}
+                  {cat} {/* Nome categoria / Category name */}
                 </button>
               </a>
             </li>
@@ -116,10 +118,11 @@ function Dolci() {
         </ul>
       </div>
 
-      {/* Contenuto principale */}
+      {/* Contenuto principale con prodotti / Main content with products */}
       <div className="custom-main box-custom-satin-glass">
         {categorie.map((categoria) => (
           <React.Fragment key={categoria}>
+            {/* Titolo categoria / Category title */}
             <h1
               className="text-white h1 fw-bold mb-0"
               style={{ padding: "1rem" }}
@@ -127,6 +130,8 @@ function Dolci() {
             >
               {categoria}
             </h1>
+
+            {/* Filtra e mostra prodotti della categoria / Filter and show category products */}
             {prodottiDolci
               .filter((p) => p.categoria === categoria)
               .map((p) => (
@@ -140,10 +145,13 @@ function Dolci() {
                     padding: "1rem",
                   }}
                 >
+                  {/* Nome prodotto e prezzo / Product name and price */}
                   <div className="d-flex w-100 justify-content-between align-items-baseline">
                     <h2 className="fs-5 fw-semibold mb-0">{p.nome}</h2>
                     <div className="prezzo mb-0">{p.prezzo}</div>
                   </div>
+
+                  {/* Descrizione prodotto / Product description */}
                   <p className="mb-0">{p.descrizione}</p>
                 </div>
               ))}
@@ -154,4 +162,5 @@ function Dolci() {
   );
 }
 
+// Esporta componente Dolci / Export Dolci component
 export default Dolci;

@@ -1,6 +1,6 @@
 import React from "react";
 
-// Array di prodotti
+// Array di prodotti / Array of products
 const prodottiCaffetteria = [
   {
     id: "Caffé",
@@ -52,7 +52,6 @@ const prodottiCaffetteria = [
     prezzo: "—",
     descrizione: "...Nocciola, Pistacchio, Nutella, Cioccolato bianco, Lotus",
   },
-
   {
     id: "Orzo",
     categoria: "Orzo",
@@ -84,7 +83,6 @@ const prodottiCaffetteria = [
     prezzo: "—",
     descrizione: "...latte intero,senza lattosio,soia",
   },
-
   {
     id: "Ginseng",
     categoria: "Ginseng",
@@ -139,9 +137,10 @@ const prodottiCaffetteria = [
 function Caffetteria() {
   return (
     <div className="m-2 custom-grid">
-      {/* Sidebar */}
+      {/* Sidebar / Sidebar */}
       <div className="custom-sidebar box-custom-satin-glass ">
         <ul className="list-unstyled lista-side">
+          {/* Pulsanti per le categorie / Buttons for categories */}
           <li>
             <a href="#Caffè">
               <button
@@ -177,18 +176,19 @@ function Caffetteria() {
           </li>
         </ul>
       </div>
-      {/* Contenuto principale */}
+
+      {/* Contenuto principale / Main content */}
       <div className="custom-main box-custom-satin-glass ">
-        {/* Aggiunte */}
+        {/* Avvisi aggiunte / Notices for extras */}
         <div className="fs-6 fw-bold mb-0 text-white aggiunte text-end">
           <h1>A tutte le varianti di latte si aggiungono 0,20€</h1>
           <h1>All'aggiunta di panna si aggiungono 0,50€</h1>
         </div>
 
-        {/* Sezioni con map */}
+        {/* Sezioni con map / Sections with map */}
         {["Caffè", "Orzo", "Ginseng"].map((categoria) => (
           <React.Fragment key={categoria}>
-            {/* Titolo della categoria */}
+            {/* Titolo categoria / Category title */}
             <h1
               className="text-white h1 fw-bold mb-0"
               style={{ padding: "1rem" }}
@@ -196,6 +196,8 @@ function Caffetteria() {
             >
               {categoria}
             </h1>
+
+            {/* Prodotti filtrati per categoria / Products filtered by category */}
             {prodottiCaffetteria
               .filter((p) => p.categoria === categoria)
               .map((p, i) => (
@@ -210,9 +212,12 @@ function Caffetteria() {
                   }}
                 >
                   <div className="d-flex w-100 justify-content-between align-items-baseline">
+                    {/* Nome prodotto / Product name */}
                     <h2 className="fs-5 fw-semibold mb-0">{p.nome}</h2>
+                    {/* Prezzo prodotto / Product price */}
                     <div className="prezzo mb-0">{p.prezzo}</div>
                   </div>
+                  {/* Descrizione prodotto / Product description */}
                   <p className="mb-0">{p.descrizione}</p>
                 </div>
               ))}

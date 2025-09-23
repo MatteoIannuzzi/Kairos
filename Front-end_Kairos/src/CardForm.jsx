@@ -1,36 +1,38 @@
-// Importa React e l'hook useState
+// Importa React e l'hook useState / Import React and useState hook
 import React, { useState } from "react";
 
-// Componente che permette di creare e aggiungere una nuova card
+// Componente CardForm / CardForm component
+// Permette di creare e aggiungere una nuova card / Allows creating and adding a new card
 function CardForm({ addCard }) {
-  // Stato che contiene i dati del form: titolo, descrizione e immagine
+  // Stato del form / Form state
+  // Contiene titolo, descrizione e immagine / Contains title, description and image
   const [formData, setFormData] = useState({
     titolo: "",
     descrizione: "",
     immagine: "",
   });
 
-  // Stato che tiene traccia dell'ID progressivo da assegnare alle nuove card
-  const [nextId, setNextId] = useState(0); // id progressivo locale
+  // Stato per ID progressivo / State for progressive ID
+  const [nextId, setNextId] = useState(0); // ID progressivo locale / Local progressive ID
 
-  // Gestisce il cambiamento degli input del form
+  // Gestione cambiamento input / Handle input changes
   const handleInputChange = (e) => {
-    const { name, value } = e.target; // Estrae nome e valore dal target
-    // Aggiorna il campo corrispondente in formData
+    const { name, value } = e.target; // Estrae nome e valore / Extract name and value
+    // Aggiorna il campo corrispondente in formData / Update the corresponding field in formData
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Gestisce l'invio del form
+  // Gestione submit form / Handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault(); // Evita il ricaricamento della pagina
+    e.preventDefault(); // Evita ricaricamento pagina / Prevent page reload
 
-    // Controlla che tutti i campi siano compilati
+    // Controlla che tutti i campi siano compilati / Check all fields are filled
     if (!formData.titolo || !formData.descrizione || !formData.immagine) {
-      alert("Per favore, compila tutti i campi.");
+      alert("Per favore, compila tutti i campi."); // Alert in italiano / Alert in Italian
       return;
     }
 
-    // Crea un nuovo oggetto card con ID univoco
+    // Crea nuovo oggetto card con ID univoco / Create new card object with unique ID
     const newCard = {
       id: nextId,
       titolo: formData.titolo,
@@ -38,12 +40,12 @@ function CardForm({ addCard }) {
       immagine: formData.immagine,
     };
 
-    // Aggiunge la nuova card all'elenco
+    // Aggiunge la nuova card all’elenco / Add the new card to the list
     addCard(newCard);
-    // Incrementa l'ID per la prossima card
+    // Incrementa l’ID per la prossima card / Increment ID for next card
     setNextId(nextId + 1);
 
-    // Reset del form
+    // Reset del form / Reset the form
     setFormData({
       titolo: "",
       descrizione: "",
@@ -53,13 +55,13 @@ function CardForm({ addCard }) {
 
   return (
     <div className="p-4">
-      {/* Form per inserire una nuova card */}
+      {/* Form per inserire nuova card / Form to add a new card */}
       <form
         onSubmit={handleSubmit}
         className="d-flex flex-column gap-3 mb-4 bg-custom-dark-background p-3 rounded text-light "
         style={{ width: "20rem" }}
       >
-        {/* Campo titolo */}
+        {/* Campo titolo / Title input field */}
         <div className="mb-3">
           <label htmlFor="titoloInput" className="form-label">
             Titolo
@@ -75,7 +77,7 @@ function CardForm({ addCard }) {
           />
         </div>
 
-        {/* Campo descrizione */}
+        {/* Campo descrizione / Description input field */}
         <div className="mb-3">
           <label htmlFor="descrizioneInput" className="form-label">
             Descrizione
@@ -91,7 +93,7 @@ function CardForm({ addCard }) {
           />
         </div>
 
-        {/* Campo URL immagine */}
+        {/* Campo URL immagine / Image URL input field */}
         <div className="mb-3">
           <label htmlFor="immagineInput" className="form-label">
             URL Immagine
@@ -107,7 +109,7 @@ function CardForm({ addCard }) {
           />
         </div>
 
-        {/* Bottone per inviare il form */}
+        {/* Bottone invio / Submit button */}
         <button type="submit" className="btn btn-primary">
           Aggiungi Card
         </button>
@@ -116,5 +118,5 @@ function CardForm({ addCard }) {
   );
 }
 
-// Esporta il componente
+// Esporta componente / Export component
 export default CardForm;

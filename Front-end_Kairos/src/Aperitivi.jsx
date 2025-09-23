@@ -1,6 +1,9 @@
 import React from "react";
+// Importa React dal pacchetto react
+// Import React from the react package
 
 // Array di prodotti
+// Array of products
 const prodottiAperitivi = [
   {
     id: "Spritzeria",
@@ -111,11 +114,16 @@ const prodottiAperitivi = [
   },
 ];
 
+// Funzione componente Aperitivi
+// Aperitivi component function
 function Aperitivi() {
+  // Definisce le categorie da mostrare nella sidebar
+  // Define the categories to display in the sidebar
   const categorie = ["Spritzeria", "Analcolici", "Drink"];
 
   return (
     <div className="m-2 custom-grid">
+      {/* Sidebar */}
       {/* Sidebar */}
       <div className="custom-sidebar box-custom-satin-glass">
         <ul className="list-unstyled lista-side">
@@ -136,6 +144,7 @@ function Aperitivi() {
       </div>
 
       {/* Contenuto principale */}
+      {/* Main content */}
       <div className="custom-main box-custom-satin-glass">
         {categorie.map((categoria) => (
           <React.Fragment key={categoria}>
@@ -173,4 +182,6 @@ function Aperitivi() {
   );
 }
 
+// Esporta il componente Aperitivi
+// Export the Aperitivi component
 export default Aperitivi;
